@@ -1,2 +1,0 @@
-export const TITLE_VALIDATHION_LIMIT = 20;
-export const TEXT_VALIDATHION_LIMIT = 40;
