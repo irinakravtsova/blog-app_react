@@ -1,9 +1,13 @@
 import React from 'react'
 import './button.css'
 
-function Button(props) {
+function Button({ text, isClass, isDisabled, onClick }) {
   return (
-    <button className='post-btn'>{props.text}</button>
+    <button 
+        className={isClass}
+        disabled={isDisabled} 
+        onClick={onClick}>
+        {text}</button>
   );
 }
 

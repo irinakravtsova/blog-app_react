@@ -114,6 +114,10 @@ function App() {
     deletePost(id);
   }
 
+  function isPostBtnDisabled() {
+    return postTitle.length === 5
+  }
+
   return (     
     <div className='blog'>
       <h1 className='h1'>Приложение блог</h1>
@@ -143,14 +147,12 @@ function App() {
                 len= {postBody.length}
                 text='Твой пост превышает 40 символов'/>
 
-            {/* <Button 
+            <Button 
                 text={'Опубликовать'}
-                onClick={hendleAddPostBtnClick} /> */}
+                isClass={'post-btn'}
+                // isDisabled={isPostBtnDisabled}
+                onClick={hendleAddPostBtnClick} />
                        
-            <button
-              className='post-btn' 
-              // disabled={true}
-              onClick={hendleAddPostBtnClick}>Опубликовать</button>
           </div>
         </div>
 
@@ -163,11 +165,9 @@ function App() {
 
             { postsIds && postsIds.map(id => (
               <Post 
-              
-              key={id}
-              // dt={dt}
-              post={postsById[id]}
-              onDelete={() => hendleDelitePost(id)}/>
+                key={id}
+                post={postsById[id]}
+                onDelete={() => hendleDelitePost(id)}/>
             ))}
           </div>
         </div>
