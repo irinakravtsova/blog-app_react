@@ -96,9 +96,9 @@ function App() {
     let error = 0;
     if (!postTitle || !postBody ) {
       error++;
-      alert('Ты ничего не добавил, заполни оба поля' );
+      alert('Заполни оба поля' );
     } else
-    if (postTitle.length> TITLE_VALIDATHION_LIMIT ) {
+    if (postTitle.length > TITLE_VALIDATHION_LIMIT ) {
       error++;
       alert('Убавь количество символов в названии поста');
     }else
@@ -131,7 +131,7 @@ function App() {
 
             <InputErrorTitle 
                 len= {postTitle.length}
-                text='Слишком много символов'/>
+                text='Твой заголовок превышает 20 символов'/>
             
             <textarea name="body" id=""
               className='post-text-input'
@@ -141,7 +141,7 @@ function App() {
 
             <InputErrorBody 
                 len= {postBody.length}
-                text='Слишком много символов'/>
+                text='Твой пост превышает 40 символов'/>
 
             {/* <Button 
                 text={'Опубликовать'}
@@ -159,7 +159,7 @@ function App() {
           <div className='posts'>
             { isError && <p>Произошла ошибка</p> }
 
-            { isLoading && <p>Загружаем посты</p> }
+            { isLoading && <p>Тут пока пусто</p> }
 
             { postsIds && postsIds.map(id => (
               <Post 
