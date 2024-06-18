@@ -115,7 +115,7 @@ function App() {
   }
 
   function isPostBtnDisabled() {
-    return postTitle.length === 5
+    return postTitle.length <1 
   }
 
   return (     
@@ -150,7 +150,7 @@ function App() {
             <Button 
                 text={'Опубликовать'}
                 isClass={'post-btn'}
-                // isDisabled={isPostBtnDisabled}
+                isDisabled={isPostBtnDisabled()}
                 onClick={hendleAddPostBtnClick} />
                        
           </div>
