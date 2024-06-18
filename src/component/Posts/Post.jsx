@@ -1,8 +1,10 @@
+import Button from "../button/button"
 
 
 function Post({
   post,
   onDelete,
+
 }) {
    return (
     
@@ -13,8 +15,11 @@ function Post({
           <div className="post__text-wrapper">
             <p className="post__text">{post.body}</p>
           </div>
-          <button className="delete-btn" onClick={onDelete}>Удалить пост</button>
-
+          <Button 
+            isClass={'delete-btn'}
+            onClick={onDelete}
+            text={'Удалить пост'}
+          />
         </div>
     </div>
    
