@@ -5,17 +5,31 @@ import Button from '../button/button';
 import InputErrorTitle from '../InputErrorTitle/InputErrorTitle';
 import InputErrorBody from '../InputErrorBody/InputErrorBody';
 
-function Form({isClass, isvalue, onChange, 
-  isvalueTextarea, onChangeBody,
-onClick}) {
+
+
+function Form({
+                isClass, 
+                isvalue, 
+                onChange, 
+                isplaceholderInput,                
+                isvalueTextarea,
+                onChangeBody, 
+                isplaceholderTextarea,
+                onClick,
+                istypeInput,
+                isnameInput,
+                isclassInput,
+                isnameTextarea,
+                isclassTextarea}) {
+
   return (
     <form action=""
         className={isClass}>
       <Input 
-          istype={"text"}
-          isname={'title'}
-          isclass= {'post-title-input'}
-          isplaceholder={'Добавь заголовок'}
+         istypeInput={istypeInput}
+         isnameInput={isnameInput}
+         isclassInput= {isclassInput}
+          isplaceholderInput={isplaceholderInput}
           isvalue={isvalue}
           onChange={onChange}/>
 
@@ -25,11 +39,10 @@ onClick}) {
 
       <Textarea 
          
-           isname={'body'}
-           isclass= {'post-text-input'}
-           isplaceholder={'Напиши пост'}
-           isvalue={isvalueTextarea}
-       
+           isnameTextarea={isnameTextarea}
+           isclassTextarea= {isclassTextarea}
+           isplaceholderTextarea={isplaceholderTextarea}
+           isvalueTextarea={isvalueTextarea}
            onChange={onChangeBody}/>      
      
 

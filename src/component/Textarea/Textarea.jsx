@@ -1,13 +1,18 @@
 import React from 'react'
 
 
-function Textarea({isname, isclass, isplacehplder, isvalue, onChange}) {
+function Textarea({
+  isvalueTextarea, 
+  onChange, 
+  isplaceholderTextarea,
+  isnameTextarea,
+  isclassTextarea}) {
   return (
     <textarea 
-        name={isname}
-        className={isclass}
-        placeholder={isplacehplder}
-        value={isvalue} 
+        name={isnameTextarea}
+        className={ isclassTextarea}
+        placeholder={isplaceholderTextarea}
+        value={isvalueTextarea} 
         onChange={onChange}></textarea>  
    
   );

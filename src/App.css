@@ -79,25 +79,7 @@ background-color: #31805e;
 .delete-btn:hover {
   background-color: #60afa5; 
 }
-/* input:invalid,
-textarea:invalid {
-  border: 2px dashed red;
-}
 
-input:valid,
-textarea:valid {
-  border: 2px solid black;
-} */
-
-
-/* .validationMessage {
-  margin-top: 20px;
-  color: red;
-} 
-
-.validationMessage_hidden {
-  display: none;
-} */
 .post {
   margin-bottom: 50px;
   max-width: 500px;
@@ -133,6 +115,6 @@ max-width: 500px;
 
 .title__countSumbol,
 .text__countSumbol {
-  font-size: 30px;
+  font-size: 20px;
  color: red;
 }

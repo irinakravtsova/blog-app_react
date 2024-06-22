@@ -8,7 +8,14 @@ import { addPost, deletePost, getPosts } from './api/post';
 import { getNormalizedPosts } from './utils/get-normalize-posts';
 import { getData } from './utils/get-data';
 import { TEXT_VALIDATHION_LIMIT,
-         TITLE_VALIDATHION_LIMIT
+         TITLE_VALIDATHION_LIMIT,
+         TEXT_PLACEHOLDER_INPUT,
+         TEXT_PLACEHOLDER_TEXTAREA,
+         TEXT_ISERROR,
+         TEXT_ISLOADING,
+         TEXT_ERROR_INPUT,
+         TEXT_POST,
+         QWANTITY_ERRORS
  } from './utils/constans';
 
 import Post from './component/Posts/Post';
@@ -41,20 +48,20 @@ function App() {
   }, []);
 
   function hendleInputTitle(event) {
-      setInput(event.target.value);
+      setInput(event.target.value.trim());
   }
 
   function hendleInputBody(event) {
-       setTextarea(event.target.value);
+       setTextarea(event.target.value.trim());
   }
 
   function hendleAddPostBtnClick(event) {
     event.preventDefault()
-    let error = formValidata()
-    if (error !== 0) {
+    let error = formValidate()
+    if (error !== QWANTITY_ERRORS) {
       return     
     }
-    alert('Всё отлично! Нажми ОК и твой пост будет добавлен в ленту')
+    alert(TEXT_POST)
     const id = uuidv4();
     const dt = getData()  
     const post = {
@@ -74,7 +81,7 @@ function App() {
     setTextarea('');
   }
 
-  function formValidata() {
+  function formValidate() {
     let error = 0;
     if (!input || !input && !textarea || !textarea ) {
       error++;
@@ -105,12 +112,19 @@ function App() {
           <h2 className='h2'>Новый пост</h2>
           <Form 
               isClass= {'form__wrapper'}
+              istypeInput={"text"}
+              isnameInput={'title'}
+              isclassInput= {'post-title-input'}
               isvalue= {input}
               onChange = {hendleInputTitle}
+              isplaceholderInput = {TEXT_PLACEHOLDER_INPUT}
+              
+              isnameTextarea={'body'}
+              isclassTextarea= {'post-text-input'}
               isvalueTextarea = {textarea}
               onChangeBody = {hendleInputBody}
-              onClick = {hendleAddPostBtnClick}
-                          
+              onClick = {hendleAddPostBtnClick}              
+              isplaceholderTextarea = {TEXT_PLACEHOLDER_TEXTAREA}                                       
               />
           
         </div>
@@ -118,9 +132,9 @@ function App() {
         <div className='blog__posts'>
           <h2 className='h2'>Лента</h2>
           <div className='posts'>
-            { isError && <p>Произошла ошибка</p> }
+            { isError && <p>{TEXT_ISERROR}</p> }
 
-            { isLoading && <p>Тут пока пусто</p> }
+            { isLoading && <p>{TEXT_ISLOADING}</p> }
 
             { postsIds && postsIds.map(id => (
               <Post 

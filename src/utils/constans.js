@@ -1,2 +1,9 @@
 export const TITLE_VALIDATHION_LIMIT = 20;
 export const TEXT_VALIDATHION_LIMIT = 40;
+export const TEXT_PLACEHOLDER_INPUT = 'Добавь заголовок';
+export const TEXT_PLACEHOLDER_TEXTAREA = 'Напиши пост';
+export const TEXT_ISERROR = 'Произошла ошибка';
+export const TEXT_ISLOADING = 'Тут пока пусто';
+export const QWANTITY_ERRORS = 0;
+export const TEXT_ERROR_INPUT = 'Убавь количество символов в названии поста';
+export const TEXT_POST = 'Все успешно, нажми OK и твой пост появиться в ленте';

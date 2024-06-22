@@ -1,13 +1,20 @@
 import React from 'react'
 
 
-function Input({istype, isname, isclass, isplacehplder, isvalue, onChange}) {
+function Input({
+  istypeInput, 
+  isnameInput, 
+  isclassInput, 
+  isplaceholderInput, 
+  isvalue,
+  onChange,}) {
+
   return (
     <input
-              type={istype}
-              name={isname}
-              className={isclass}
-              placeholder={isplacehplder}
+              type={istypeInput}
+              name={isnameInput}
+              className={isclassInput}
+              placeholder={isplaceholderInput}
               value={isvalue} 
               onChange={onChange}/>
   
