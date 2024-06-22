@@ -1,11 +1,10 @@
 import React from 'react'
-import './button.css'
 
-function Button({ text, isClass, isDisabled, onClick }) {
+
+function Button({ text, isClass, onClick }) {
   return (
     <button 
         className={isClass}
-        disabled={isDisabled} 
         onClick={onClick}>
         {text}</button>
   );

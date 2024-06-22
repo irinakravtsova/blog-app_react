@@ -130,3 +130,9 @@ line-height: 39px;
 line-height: 30px;
 max-width: 500px;
 }
+
+.title__countSumbol,
+.text__countSumbol {
+  font-size: 30px;
+ color: red;
+}

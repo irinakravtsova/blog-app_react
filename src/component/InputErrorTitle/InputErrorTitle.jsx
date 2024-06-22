@@ -1,5 +1,4 @@
 import React from "react";
-import './InputErrorTitle.css'
 import { TITLE_VALIDATHION_LIMIT } from "../../utils/constans";
 
 function InputErrorTitle(props) {

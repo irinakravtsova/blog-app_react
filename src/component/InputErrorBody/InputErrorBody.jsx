@@ -1,5 +1,4 @@
 import React from "react";
-import './InputErrorBody.css';
 import { TEXT_VALIDATHION_LIMIT } from "../../utils/constans";
 
 function InputErrorBody(props) {
