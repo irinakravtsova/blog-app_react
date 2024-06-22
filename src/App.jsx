@@ -99,7 +99,7 @@ function App() {
     return error;
   } 
 
-  function hendleDelitePost(id) {
+  function hendleDeletePost(id) {
     setpostsIds(postsIds.filter(postId => postId !== id));
     deletePost(id);
   }
@@ -140,7 +140,7 @@ function App() {
               <Post 
                 key={id}
                 post={postsById[id]}
-                onDelete={() => hendleDelitePost(id)}/>
+                onDelete={() => hendleDeletePost(id)}/>
             ))}
           </div>
         </div>
